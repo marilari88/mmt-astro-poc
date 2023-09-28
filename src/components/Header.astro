@@ -9,6 +9,7 @@ type Props = {
 }
 
 const {tone} = Astro.props
+const {pathname} = Astro.url
 ---
 
 <header
@@ -28,7 +29,10 @@ const {tone} = Astro.props
       class="absolute bg-neutral-1200/8 inset-0 lg:hidden pointer-events-none opacity-none transition-opacity z-30"
     >
     </div>
-    <div id="toggleMenu" class="lg:hidden absolute top-8 right-8 z-50">
+    <div
+      id="toggleMenu"
+      class="lg:hidden absolute top-8 right-8 z-50 cursor-pointer"
+    >
       <MenuIcon />
     </div>
     <nav
@@ -44,13 +48,25 @@ const {tone} = Astro.props
         class="gap-4 lg:gap-5 pt-[100px] pr-16 lg:pt-0 lg:pr-0 items-end lg:items-center flex flex-col lg:flex-row"
       >
         <NavigationItem>
-          <a href="/"> For enterprises</a>
+          <a href="/" class:list={[{'!text-neutral-500': pathname === '/'}]}>
+            For enterprises</a
+          >
         </NavigationItem>
         <NavigationItem>
-          <a href="/translator"> For translator</a>
+          <a
+            href="/translator"
+            class:list={[{'!text-neutral-500': pathname === '/translator'}]}
+          >
+            For translator</a
+          >
         </NavigationItem>
         <NavigationItem>
-          <a href="/translate"> Translate</a>
+          <a
+            href="/translate"
+            class:list={[{'!text-neutral-500': pathname === '/translate'}]}
+          >
+            Translate</a
+          >
         </NavigationItem>
         <NavigationItem>
           <a href="/login"> Login</a>
