@@ -14,7 +14,7 @@ const {tone} = Astro.props
 <header
   class:list={[
     {'bg-orange-100 text-neutral-1200': tone != 'primary'},
-    {'bg-primary-800 text-neutral-25': tone == 'primary'},
+    {'bg-primary-1200 text-neutral-25': tone == 'primary'},
   ]}
 >
   <div
@@ -36,7 +36,7 @@ const {tone} = Astro.props
       data-expanded="false"
       class:list={[
         'max-w-[450px] lg:max-w-fit w-full z-40 lg:bg-transparent fixed inset-y-0 right-0 lg:static lg:transform-none translate-x-full data-[expanded=true]:translate-x-0 transition-all',
-        {'bg-primary-700': tone == 'primary'},
+        {'bg-primary-1200': tone == 'primary'},
         {'bg-orange-100': tone != 'primary'},
       ]}
     >
@@ -58,8 +58,8 @@ const {tone} = Astro.props
         <li>
           <a href="/pricing">
             <Button
-              variant={{tone, mode: 'outline'}}
-              className="whitespace-nowrap"
+              variant={{tone, mode: 'solid'}}
+              className="whitespace-nowrap border-none"
             >
               Get started
             </Button>
