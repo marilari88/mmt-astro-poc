@@ -21,7 +21,6 @@
   },
   "devDependencies": {
     "@astrojs/react": "^3.0.2",
-    "@fontsource/twinkle-star": "^5.0.12",
     "@tanstack/react-query": "^4.35.3",
     "@translated/babele-react": "^0.20.7",
     "@translated/babele-tokens": "^0.9.5",

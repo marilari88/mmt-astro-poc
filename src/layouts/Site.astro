@@ -20,19 +20,19 @@ import Header from '../components/Header.astro'
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body data-theme="translated-light" class="bg-neutral-50">
+  <body data-theme="translated-light" class="bg-neutral-50 overflow-x-hidden">
     <Header tone="primary" />
     <slot />
     <footer class="flex flex-col gap-16">
       <div
-        class="bg-primary-700 px-[88px] py-[52px] max-w-[1400px] mx-auto w-[86%] rounded-sm flex items-center justify-between"
+        class="bg-primary-800 px-[88px] py-[52px] max-w-[1400px] mx-auto w-[86%] rounded-sm flex items-center justify-between"
       >
         <h2 class="text-neutral-25 text-[2rem] font-bold">
           Ready to translate?
         </h2>
         <Button
           variant={{tone: 'primary', mode: 'solid', size: 'xl'}}
-          className="border-primary-700"
+          className="border-primary-800"
         >
           Start your free month trial
         </Button>
