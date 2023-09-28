@@ -2,7 +2,7 @@
 import NavigationItem from '../components/NavigationItem.astro'
 import MMTLogo from '../components/MMTLogo.astro'
 import {Button} from '@translated/babele-react'
-import Menu from '../assets/images/icons/menu.svg'
+import MenuIcon from '../components/MenuIcon.astro'
 
 type Props = {
   tone: 'neutral' | 'primary'
@@ -28,11 +28,8 @@ const {tone} = Astro.props
       class="absolute bg-neutral-1200/8 inset-0 lg:hidden pointer-events-none opacity-none transition-opacity z-30"
     >
     </div>
-    <div
-      id="toggleMenu"
-      class="lg:hidden absolute top-8 right-8 text-neutral-25 z-50"
-    >
-      <img src={Menu.src} alt="Menu" />
+    <div id="toggleMenu" class="lg:hidden absolute top-8 right-8 z-50">
+      <MenuIcon />
     </div>
     <nav
       id="navigationMenu"
@@ -46,26 +43,28 @@ const {tone} = Astro.props
       <ul
         class="gap-4 lg:gap-5 pt-[100px] pr-16 lg:pt-0 lg:pr-0 items-end lg:items-center flex flex-col lg:flex-row"
       >
-        <a href="/">
-          <NavigationItem>For enterprises</NavigationItem>
-        </a>
-        <a href="/translator">
-          <NavigationItem>For translator</NavigationItem>
-        </a>
-        <a href="/translate">
-          <NavigationItem>Translate</NavigationItem>
-        </a>
-        <a href="/login">
-          <NavigationItem>Login</NavigationItem>
-        </a>
-        <a href="/pricing">
-          <Button
-            variant={{tone, mode: 'outline'}}
-            className="whitespace-nowrap"
-          >
-            Get started
-          </Button>
-        </a>
+        <NavigationItem>
+          <a href="/"> For enterprises</a>
+        </NavigationItem>
+        <NavigationItem>
+          <a href="/translator"> For translator</a>
+        </NavigationItem>
+        <NavigationItem>
+          <a href="/translate"> Translate</a>
+        </NavigationItem>
+        <NavigationItem>
+          <a href="/login"> Login</a>
+        </NavigationItem>
+        <li>
+          <a href="/pricing">
+            <Button
+              variant={{tone, mode: 'outline'}}
+              className="whitespace-nowrap"
+            >
+              Get started
+            </Button>
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
