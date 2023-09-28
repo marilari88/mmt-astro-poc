@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Site.astro'
+import {Button} from '@translated/babele-react'
+import FeatureCard from '../components/FeatureCard.astro'
+import sampleIllustration from '../assets/images/illustrations/enterprise.svg'
+import languageIcon from '../assets/images/icons/language.svg'
+import checkIcon from '../assets/images/icons/check.svg'
+import layerIcon from '../assets/images/icons/layer.svg'
+---
+
+<Layout title="MMT website">
+  <section class="bg-primary-700">
+    <div
+      class="mx-auto w-[86%] max-w-[1440px] grid grid-cols-2 gap-12 items-center"
+    >
+      <div class="flex flex-col gap-8 items-start">
+        <h1 class="text-neutral-25 text-display-lg font-bold gap-2">
+          A more human machine translation
+        </h1>
+        <div class="text-display-xs text-neutral-25 leading-noral">
+          It improves from corrections and adapts to the context of the
+          document. Like a human.
+        </div>
+        <Button
+          variant={{tone: 'primary', size: 'xl'}}
+          className="border-primary-700"
+        >
+          Start your free month trial
+        </Button>
+      </div>
+      <img
+        class="p-10"
+        src={sampleIllustration.src}
+        width="1000"
+        height="500"
+        alt="ModernMT Illustration"
+      />
+    </div>
+  </section>
+  <section
+    class="mx-auto w-[86%] max-w-[1440px] grid grid-cols-3 gap-8 px-16 py-[100px]"
+  >
+    <FeatureCard
+      icon={languageIcon.src}
+      title="Document-level adaptation for unprecedented quality"
+      description="ModernMT elaborates the translation based on the content of the whole document, not just the single sentence, using the most appropriate terminology for outstanding quality."
+    />
+    <FeatureCard
+      icon={layerIcon.src}
+      title="Full content ownership and data confidentiality"
+      description="You get full ownership of your data and can cache MT output, making your translated content SEO-friendly, and avoiding having to pay twice for duplicates."
+    />
+    <FeatureCard
+      icon={checkIcon.src}
+      title="Easy to manage and cost-effective"
+      description="Easy to manage, to scale and more cost-effective. Based on a single model that supports all languages and domains, able to improve in real time without any training."
+    />
+  </section>
+</Layout>

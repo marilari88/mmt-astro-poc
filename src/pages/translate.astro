@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Translate.astro'
+import {TranslateToolPage} from '../components/TranslateTool'
+import {Button} from '@translated/babele-react'
+---
+
+<Layout title="MMT website | Translate">
+  <div class="absolute bg-orange-100 w-full h-[250px]"></div>
+  <div class="w-full">
+    <TranslateToolPage client:load />
+  </div>
+  <section class="max-w-[1010px] mx-auto px-10 mb-16">
+    <div
+      class="border-1 rounded-sm p-10 border-neutral-500 flex flex-row justify-between items-center"
+    >
+      <div class="flex flex-col gap-1">
+        <h2 class="text-display-sm font-regular">Improve your translations</h2>
+        <div class="text-md">
+          Import your translation memories to see the power of ModernMT
+        </div>
+      </div>
+      <Button variant={{mode: 'solid', tone: 'primary', size: 'xl'}}>
+        Import memories
+      </Button>
+    </div>
+  </section>
+</Layout>

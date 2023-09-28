@@ -1,0 +1,78 @@
+---
+import {Button} from '@translated/babele-react'
+import mmtFooter from '../assets/images/logos/mt_footer.svg'
+import Link from '../components/Link.astro'
+interface Props {
+  title: string
+}
+
+const {title} = Astro.props
+import Header from '../components/Header.astro'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="ModernMT website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body data-theme="translated-light" class="bg-neutral-50">
+    <Header tone="primary" />
+    <slot />
+    <footer class="flex flex-col gap-16">
+      <div
+        class="bg-primary-700 px-[88px] py-[52px] max-w-[1400px] mx-auto w-[86%] rounded-sm flex items-center justify-between"
+      >
+        <h2 class="text-neutral-25 text-[2rem] font-bold">
+          Ready to translate?
+        </h2>
+        <Button
+          variant={{tone: 'primary', mode: 'solid', size: 'xl'}}
+          className="border-primary-700"
+        >
+          Start your free month trial
+        </Button>
+      </div>
+      <section
+        class="max-w-[1400px] mx-auto w-[86%] grid grid-cols-4 items-center justify-between"
+      >
+        <img src={mmtFooter.src} width="150px" alt="MMT logo footer" } />
+        <div class="flex flex-col gap-3">
+          <div class="font-bold">PRODUCT</div>
+          <Link href="/">For enterprises</Link>
+          <Link href="/translators">For enterprises</Link>
+          <Link href="/pricing">Get started</Link>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <div class="font-bold">COMPANY</div>
+          <Link href="/contact-us">Contact us</Link>
+          <Link href="/terms">Term and conditions</Link>
+          <Link href="/privacy">Privacy policy</Link>
+        </div>
+
+        <div class="flex flex-col gap-3">
+          <div class="font-bold">RESOURCES</div>
+          <Link href="/faq">Help center</Link>
+          <Link href="/api">API Documentation</Link>
+          <Link href="/blog">Blog</Link>
+        </div>
+      </section>
+      <section class="py-16 mx-auto text-neutral-700 text-sm">
+        © 2022 Translated S.r.l. · Via Indonesia 23, 00144 Roma (Italy) · VAT
+        IT07173521001
+      </section>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import '@translated/babele-tokens/assets/arsmaquettepro.css';
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+</style>

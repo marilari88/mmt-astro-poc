@@ -1,0 +1,16 @@
+---
+import {Image} from 'astro:assets'
+type Props = {
+  icon: string
+  title: string
+  description: string
+}
+
+const {icon, title, description} = Astro.props
+---
+
+<div class="bg-orange-100/8 flex flex-col gap-4 rounded-sm p-8 -mt-8">
+  <img class="relative -mt-[50px]" src={icon} width={40}  alt={`${title} icon`} />
+  <div class="text-lg font-bold">{title}</div>
+  <div>{description}</div>
+</div>
