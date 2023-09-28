@@ -25,9 +25,12 @@ import Header from '../components/Header.astro'
     <slot />
     <footer class="flex flex-col gap-16">
       <div
-        class="bg-primary-800 px-[88px] py-[52px] max-w-[1400px] mx-auto w-[86%] rounded-sm flex items-center justify-between"
+        class:list={[
+          'bg-primary-800 px-4 py-4 max-w-[1400px] mx-auto w-[86%] rounded-sm flex flex-col items-center justify-between gap-2',
+          'lg:flex-row lg:px-[88px] lg:py-[52px]',
+        ]}
       >
-        <h2 class="text-neutral-25 text-[2rem] font-bold">
+        <h2 class="text-neutral-25 text-[1.8rem] font-bold text-center">
           Ready to translate?
         </h2>
         <Button
@@ -38,31 +41,46 @@ import Header from '../components/Header.astro'
         </Button>
       </div>
       <section
-        class="max-w-[1400px] mx-auto w-[86%] grid grid-cols-4 items-center justify-between"
+        class:list={[
+          'max-w-[1400px] mx-auto w-[86%] grid gap-8 items-center',
+          'lg:grid-cols-4',
+        ]}
       >
-        <img src={mmtFooter.src} width="150px" alt="MMT logo footer" } />
-        <div class="flex flex-col gap-3">
+        <img
+          src={mmtFooter.src}
+          width="150px"
+          alt="MMT logo footer"
+          }
+          class="lg:block hidden"
+        />
+        <div
+          class:list={['flex flex-col gap-3 items-center', 'lg:items-start']}
+        >
           <div class="font-bold">PRODUCT</div>
           <Link href="/">For enterprises</Link>
           <Link href="/translators">For enterprises</Link>
           <Link href="/pricing">Get started</Link>
         </div>
 
-        <div class="flex flex-col gap-3">
+        <div
+          class:list={['flex flex-col gap-3 items-center', 'lg:items-start']}
+        >
           <div class="font-bold">COMPANY</div>
           <Link href="/contact-us">Contact us</Link>
           <Link href="/terms">Term and conditions</Link>
           <Link href="/privacy">Privacy policy</Link>
         </div>
 
-        <div class="flex flex-col gap-3">
+        <div
+          class:list={['flex flex-col gap-3 items-center', 'lg:items-start']}
+        >
           <div class="font-bold">RESOURCES</div>
           <Link href="/faq">Help center</Link>
           <Link href="/api">API Documentation</Link>
           <Link href="/blog">Blog</Link>
         </div>
       </section>
-      <section class="py-16 mx-auto text-neutral-700 text-sm">
+      <section class="py-16 mx-auto text-neutral-700 text-sm text-center">
         © 2022 Translated S.r.l. · Via Indonesia 23, 00144 Roma (Italy) · VAT
         IT07173521001
       </section>

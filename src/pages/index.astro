@@ -11,13 +11,25 @@ import layerIcon from '../assets/images/icons/layer.svg'
 <Layout title="MMT website">
   <section class="bg-primary-800">
     <div
-      class="mx-auto w-[86%] max-w-[1440px] grid grid-cols-2 gap-12 items-center"
+      class:list={[
+        'mx-auto w-[86%] max-w-[1440px] grid gap-16 items-center justify-items-center',
+        'lg:grid-cols-2',
+      ]}
     >
-      <div class="flex flex-col gap-8 items-start">
-        <h1 class="text-neutral-25 text-display-lg font-bold gap-2">
+      <div
+        class:list={[
+          'flex flex-col gap-8 items-stretch max-w-screen-sm',
+          'lg:items-start',
+        ]}
+      >
+        <h1
+          class="text-neutral-25 text-display-lg font-bold gap-2 text-center lg:text-left"
+        >
           A more human machine translation
         </h1>
-        <div class="text-display-xs text-neutral-25 leading-noral">
+        <div
+          class="text-display-xs text-neutral-25 leading-noral lg:text-left text-center max-w-prose"
+        >
           It improves from corrections and adapts to the context of the
           document. Like a human.
         </div>
@@ -29,16 +41,17 @@ import layerIcon from '../assets/images/icons/layer.svg'
         </Button>
       </div>
       <img
-        class="p-10"
+        class="p-10 max-w-screen-sm w-full"
         src={sampleIllustration.src}
-        width="1000"
-        height="500"
         alt="ModernMT Illustration"
       />
     </div>
   </section>
   <section
-    class="mx-auto w-[86%] max-w-[1440px] grid grid-cols-3 gap-8 px-16 py-[100px]"
+    class:list={[
+      'mx-auto w-[86%] max-w-[1440px] grid gap-16 py-[100px]',
+      'lg:grid-cols-3 lg:gap-8',
+    ]}
   >
     <FeatureCard
       icon={languageIcon.src}
