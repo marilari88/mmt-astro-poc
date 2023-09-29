@@ -2,6 +2,7 @@
 import {Button} from '@translated/babele-react'
 import mmtFooter from '../assets/images/logos/mt_footer.svg'
 import Link from '../components/Link.astro'
+import {ViewTransitions} from 'astro:transitions'
 interface Props {
   title: string
 }
@@ -19,6 +20,7 @@ import Header from '../components/Header.astro'
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body data-theme="translated-light" class="bg-neutral-50 overflow-x-hidden">
     <Header tone="primary" />
@@ -85,12 +87,10 @@ import Header from '../components/Header.astro'
         IT07173521001
       </section>
     </footer>
-  </body>
+  </body><style is:global>
+    @import '@translated/babele-tokens/assets/arsmaquettepro.css';
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+  </style>
 </html>
-
-<style is:global>
-  @import '@translated/babele-tokens/assets/arsmaquettepro.css';
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-</style>
