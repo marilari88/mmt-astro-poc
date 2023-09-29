@@ -1,1 +1,65 @@
-Login
+---
+import Layout from '../layouts/Login.astro'
+import {Button, TextField} from '@translated/babele-react'
+
+let error
+
+if (Astro.cookies.has('loggedIn')) {
+  console.log('loggato')
+  return Astro.redirect('/dashboard')
+}
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData()
+
+    const username = data.get('username')
+    const password = data.get('password')
+
+    if (username === 'admin' && password === 'admin') {
+      Astro.cookies.set('loggedIn', 'admin')
+      return Astro.redirect('/dashboard')
+    } else {
+      console.log('invalid')
+      error = 'Invalid username or password'
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message)
+    }
+  }
+}
+---
+
+<Layout title="Login">
+  <div class="absolute w-full grid place-items-center">
+    <form method="POST" class="flex flex-col gap-5 p-16">
+      <h1 class="text-lg font-bold text-center">Login</h1>
+      <div class="flex flex-col gap-3">
+        Username <TextField
+          type="text"
+          name="username"
+          id="username"
+          placeholder="username"
+        />
+      </div>
+      <div class="flex flex-col gap-3">
+        Password <TextField
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+        />
+      </div>
+      <Button
+        variant={{tone: 'primary', mode: 'solid'}}
+        type="submit"
+        name="submit"
+        id="submit"
+      >
+        Login
+      </Button>
+    </form>
+    <div class="text-critical-800 p-2">{error}</div>
+  </div>
+</Layout>

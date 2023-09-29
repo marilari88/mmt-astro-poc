@@ -1,0 +1,15 @@
+---
+export const prerender = false
+import Layout from '../layouts/Dashboard.astro'
+
+if (!Astro.cookies.has('loggedIn')) {
+  return Astro.redirect('/')
+}
+
+const userName = Astro.cookies.get('isLogged')
+---
+
+<Layout title="Dashboard">
+  <div>Dashboard</div>
+  <div>hello {userName}</div>
+</Layout>
